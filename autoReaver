@@ -68,6 +68,9 @@
 #### Helpful commands
 #    sudo iwlist wlan0 scan
 #    wash -i mon0 -C -s
+echoBlue(){ 
+echo -e "\033[1m\E[34m$@\033[0m"
+}
 
 if [[ ! -f $(pwd)"/configurationSettings" ]]; then
     echo "OOOOOPS! You've lost configuration file of AutoReaver: ./configurationSettings";
@@ -235,7 +238,7 @@ getWifiCardDriver(){
 }
 
 resetWifiCard(){
-  local WIFI_DRIVER=$(getWifiCardDriver);
+  local WIFI_DRIVER="ath9k"; #$(getWifiCardDriver);
   local RESET_CARD_DRIVER_CMD="";
   if [[ -z "$WIFI_DRIVER" ]]; then
 	echoBlue "Sorry couldn't get your WifiDriver";
