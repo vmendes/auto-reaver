@@ -362,7 +362,7 @@ isAPOnline(){
       if [[ $[$BEGIN_TIME+$BSSID_ONLINE_TIMEOUT] < $[$(date +%s)] ]]; then
 	  if [[ ! -z $LAST_PID ]]; then
 	    kill $LAST_PID;
-	    killall "konsole";
+	    #killall "konsole";
 
 	  fi;
 	  rm $AIRODUMP_CSV_LOG &>/dev/null;
@@ -381,7 +381,7 @@ isAPOnline(){
       if [[ -n "$CHECK" ]]; then
 	  if [[ ! -z $LAST_PID ]]; then
 	    kill $LAST_PID;
-	    killall "konsole";
+	    #killall "konsole";
 	  fi;
 	  rm $AIRODUMP_CSV_LOG &>/dev/null;
 	  echo "1";
